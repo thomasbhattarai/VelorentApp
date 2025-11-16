@@ -20,12 +20,17 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Container(
+            padding: EdgeInsets.all(20),
             width: 200,
             height: 200,
-            color: Colors.pink,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 3),
+              color: Colors.pink,
+              borderRadius: BorderRadius.circular(20),
+            ),
             alignment: Alignment.center,
             child: Text(
-              "Search Bikes",
+              "Search Bikes, Cars and Scooters",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
