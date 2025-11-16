@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
@@ -18,22 +19,20 @@ class MyApp extends StatelessWidget {
           leading: CircleAvatar(child: Text('T')),
           actions: [Icon(Icons.notifications_active), Icon(Icons.search)],
         ),
-        body: Center(
-          child: Container(
-            padding: EdgeInsets.all(20),
-            width: 200,
-            height: 200,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black, width: 3),
-              color: Colors.pink,
-              borderRadius: BorderRadius.circular(20),
+        body: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network(
+                  'https://tvsnepal.com/images/product/-RTR-160-2v-FI68cf98ad96464-RTR-160-2v-Refresh662105b196e00TVS-Apache-160-Web-Banner_554-x-365-static-profile-shot.jpg',
+                ),
+              ),
             ),
-            alignment: Alignment.center,
-            child: Text(
-              "Search Bikes, Cars and Scooters",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
+          ],
         ),
       ),
     );
